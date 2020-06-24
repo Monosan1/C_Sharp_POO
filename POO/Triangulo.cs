@@ -1,7 +1,8 @@
-﻿namespace Sem_POO
+﻿using System;
+
+namespace Sem_POO
 {
-    class Triangulo
-    {
+    class Triangulo{
         public double A;
         public double B;
         public double C; 
