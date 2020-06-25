@@ -4,9 +4,9 @@ using System.Text;
 using System.Globalization;
 
 namespace Estoque
-{
-    class Produto
     {
+    class Produto
+        {
         public string Nome;
         public double Preco;
         public int Quantidade;
@@ -15,6 +15,17 @@ namespace Estoque
             {
             return Preco * Quantidade;
             }
+
+        public void AdicionarProdutos(int quantidade)
+            {
+            Quantidade += quantidade;
+            }
+
+        public void RemoverProdutos(int quantidade)
+            {
+            Quantidade -= quantidade;
+            }
+
         public override string ToString()
             {
             return Nome + ", R$ "
@@ -23,7 +34,9 @@ namespace Estoque
                 + Quantidade
                 + " Unidades, Total: R$"
                 + ValorTotalEmEstoque().ToString("F2", CultureInfo.InvariantCulture);
-                
             }
+
+
+
         }
-}
+    }
