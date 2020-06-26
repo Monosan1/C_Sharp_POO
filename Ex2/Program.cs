@@ -3,7 +3,7 @@ using System.Globalization;
 
 namespace Ex2
     {
-    class Program
+    /*class Program
         {
         static void Main(string[] args)
             {
@@ -23,13 +23,61 @@ namespace Ex2
 
 
             }
-        }
+        }*/
 
-    class EX2
+    /*   class EX2
+           {
+           static void Main(string[] args)
+               {
+               Funcionario func;
+               func = new Funcionario();
+
+               Console.Write("Nome: ");
+               func.Nome = Console.ReadLine();
+               Console.Write("Salário Bruto: ");
+               func.SalarioBruto = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+               Console.Write("Imposto: ");
+               func.Imposto = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+
+               Console.WriteLine();
+               Console.WriteLine($"Funcionário: {func}");
+
+               Console.WriteLine();
+               Console.Write("Digite a porcentagem para aumentar o salário: ");
+
+               double PorcentagemAumento = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+
+               func.AumentarSalario(PorcentagemAumento);
+
+               Console.WriteLine();
+               Console.WriteLine($"Dados atualizados: {func}");
+               }
+           }*/
+    class EX3
         {
-        static void main(string[] args)
+        static void Main(string[] args)
             {
+            Aluno aluno;
+            aluno = new Aluno();
 
+            Console.Write("Nome do aluno: ");
+            aluno.Nome = Console.ReadLine();
+            Console.WriteLine("Digite as três notas do aluno:");
+            aluno.Nota1 = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+            aluno.Nota2 = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+            aluno.Nota3 = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+
+            Console.WriteLine($"NOTA FINAL = {aluno.CalcNotaFinal().ToString("F2", CultureInfo.InvariantCulture)}");
+            if (aluno.Aprovado())
+                {
+                Console.WriteLine();
+                }
+            else
+                {
+                Console.WriteLine();
+                Console.WriteLine("REPROVADO");
+                Console.WriteLine($"NOTA RESTANTE = {aluno.NotaRestante().ToString("F2", CultureInfo.InvariantCulture)} PONTOS");
+                }
             }
         }
     }
