@@ -7,26 +7,45 @@ namespace Construtores
     {
     class Produto
         {
-        public string Nome;
-        public double Preco;
-        public int Quantidade;
-        
-       /* public Produto(string nome, double preco, int quantidade)
+        private string _nome;
+        public double Preco { get; private set; }
+        public int Quantidade { get; private set; }
+
+        public Produto()
             {
-            Nome = nome;
+            Quantidade = 10;
+            }
+
+        public Produto(string nome, double preco, int quantidade)
+            {
+            _nome = nome;
             Preco = preco;
             Quantidade = quantidade;
             }
 
-        public Produto (string nome, double preco)
-            {
-            Nome = nome;
-            Preco = preco;
-            }*/
+        public string Nome { 
+            get { return _nome; }
+            set {
+                if (value != null && value.Length > 1)
+                    {
+                    _nome = value;
+                    }
+                }
+            }
+            
+            
+       
 
+       
+
+        /* public Produto(string nome, double preco,) : this(nome, preco)
+             {
+             Quantidade = quantidade;
+             }
+ */
         public double ValorTotalEmEstoque()
             {
-            return Preco * Quantidade;
+            return Preco *Quantidade;
             }
 
         public void AdicionarProdutos(int quantidade)
@@ -41,7 +60,7 @@ namespace Construtores
 
         public override string ToString()
             {
-            return Nome + ", R$ "
+            return _nome + ", R$ "
                 + Preco.ToString("F2", CultureInfo.InvariantCulture)
                 + ", "
                 + Quantidade
