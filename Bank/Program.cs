@@ -7,6 +7,7 @@ namespace Bank
         {
         static void Main(string[] args)
             {
+            Account account;
             Console.WriteLine("Hello World!");
             }
         }
